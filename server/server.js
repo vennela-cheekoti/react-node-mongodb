@@ -1,5 +1,4 @@
 var express = require('express')
-var config = require('../config.json')
 var bodyParser = require('body-parser')
 var cors = require('cors')
 
@@ -39,6 +38,6 @@ app.post('/users', (req, res) => {
 
 })
 
-app.listen(config.serverPort, function () {
-  console.log(`Example app listening on port ${config.serverPort}!`)
+app.listen(3000, function () {
+  console.log(`Example app listening on port 3000!`)
 })

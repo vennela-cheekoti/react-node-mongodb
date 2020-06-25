@@ -1,5 +1,0 @@
-{
-    "apiPrefix": "http://localhost:3000",
-    "serverPort": "3000",
-    "URI": "mongodb+srv://vennela:cheekoti@cluster0-ljqee.mongodb.net/<dbname>?retryWrites=true&w=majority"
-}
