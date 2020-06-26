@@ -39,6 +39,13 @@ app.post('/users', (req, res) => {
 	});
 
 })
+app.patch('/users/:id', (req, res) => {
+
+	userutils.updateusers(req.body).then( (data) => {
+		res.send(data)
+	});
+
+})
 
 app.delete('/users/:id', (req, res) => {
 	userutils.deleteusers(req.body).then((data)=>{

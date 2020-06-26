@@ -20,9 +20,12 @@ exports.createusers = (data) => {
     });
 	return us.save();
 };
+exports.updateusers=(data)=>{
+	var updvalues={"UNAME": data.uname, "PWD": data.pwd}
+	return user.findById(data.id).updateOne(updvalues);
+}
 
 exports.deleteusers=(data)=>{
 	//console.log("utils data: ", data)
 	return user.findById(data.id).deleteOne();
-
 }
