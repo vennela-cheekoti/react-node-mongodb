@@ -13,9 +13,14 @@ const userapi = {
     },
 
     createusers(user) {
-    	//console.log(`${config.apiPrefix}/n100s`)
+        //console.log(`${config.apiPrefix}/n100s`)
+        //console.log('api post data: ', user)
         return axios.post(`${config.apiPrefix}/users`, user);
-    },    
+    }, 
+    deleteusers(user){
+        //console.log('api delete data: ', user)
+        return axios.delete(`${config.apiPrefix}/users/:id`,{data: user});
+    }   
 }
 
 

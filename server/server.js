@@ -33,10 +33,20 @@ app.get('/users', (req, res) => {
 app.post('/users', (req, res) => {
 
 	userutils.createusers(req.body).then( (data) => {
+		//console.log("post request body: ",req.body)
+		//console.log("post data: ", data)
 		res.send(data)
 	});
 
 })
+
+app.delete('/users/:id', (req, res) => {
+	userutils.deleteusers(req.body).then((data)=>{
+		//console.log("delete request body: ",req.body)
+		//console.log("server data:",data)
+		res.send(data)
+	})
+  })
 
 app.listen(3000, function () {
   console.log(`Example app listening on port 3000!`)

@@ -12,6 +12,7 @@ exports.listusers = () => {
 
 
 exports.createusers = (data) => {
+	//console.log('utils post data: ', data)
 	const us = new user({
         UNAME: data.uname,
 	    PWD:  data.pwd,
@@ -19,3 +20,9 @@ exports.createusers = (data) => {
     });
 	return us.save();
 };
+
+exports.deleteusers=(data)=>{
+	//console.log("utils data: ", data)
+	return user.findById(data.id).deleteOne();
+
+}
