@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import {newUser} from '../actions/index'
+import api from '../api/user'
 
  class Adduser extends Component {
     state={
@@ -16,7 +17,13 @@ import {newUser} from '../actions/index'
           })
       }
       addData(){
-        this.props.newUser(this.state.user);
+        api.createusers(this.state.user).then(() =>
+        console.log("user added")
+        )
+        .catch(err =>
+            console.error(err)
+        );
+        //this.props.newUser(this.state.user); //using redux store
       }
     render() {
         return (
